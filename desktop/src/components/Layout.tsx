@@ -16,6 +16,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Copyright from './Copyright';
 import { secondarySidebarItems, sidebarItems } from './SidebarItems';
+import { Logout } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const drawerWidth: number = 240;
 
@@ -70,7 +72,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const mdTheme = createTheme();
 
 const Layout = ({ children, title }: { children: React.ReactNode, title: string }) => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -106,10 +108,8 @@ const Layout = ({ children, title }: { children: React.ReactNode, title: string 
             >
               {title}
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+            <IconButton component={Link} to="/log-in" color="inherit">
+              <Logout />
             </IconButton>
           </Toolbar>
         </AppBar>

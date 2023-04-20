@@ -3,44 +3,41 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import { Dashboard, Event, People, Pets, PointOfSale } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 export const sidebarItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/">
       <ListItemIcon>
-        <DashboardIcon />
+        <Dashboard />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Inicio" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/sales">
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <PointOfSale />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Caja" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/appointments">
       <ListItemIcon>
-        <PeopleIcon />
+        <Event />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Citas" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/patients">
       <ListItemIcon>
-        <BarChartIcon />
+        <Pets />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Pacientes" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={Link} to="/clients">
       <ListItemIcon>
-        <LayersIcon />
+        <People />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Clientes" />
     </ListItemButton>
   </React.Fragment>
 );
