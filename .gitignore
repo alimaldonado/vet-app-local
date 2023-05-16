@@ -1,1 +1,8 @@
+# docker
 docker-compose.yml
+
+# Byte-compiled files
+__pycache__/
+
+# Environment files
+.env
