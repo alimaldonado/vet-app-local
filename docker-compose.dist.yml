@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   server:
+    container_name: vet-app-server
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -15,6 +16,7 @@ services:
     depends_on:
       - db
   db:
+    container_name: vet-app-db
     image: postgres:13-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
